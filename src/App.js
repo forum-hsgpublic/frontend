@@ -1,6 +1,9 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import Profile from './components/Profile';
 import Users from './components/Users';
 import Categories from './components/Categories';
 import Posts from './components/Posts';
