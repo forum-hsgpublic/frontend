@@ -9,4 +9,13 @@ const api = axios.create({
     },
 });
 
+// 로그인 시 토큰 설정
+export const setAuthToken = (token) => {
+    if (token) {
+        api.defaults.headers['Authorization'] = `Bearer ${token}`;
+    } else {
+        delete api.defaults.headers['Authorization'];
+    }
+};
+
 export default api;
