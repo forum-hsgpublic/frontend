@@ -13,6 +13,9 @@ function App() {
             <div>
                 <nav>
                     <ul>
+                        <li><Link to="/signup">회원가입</Link></li>
+                        <li><Link to="/login">로그인</Link></li>
+                        <li><Link to="/profile">프로필</Link></li>
                         <li><Link to="/users">사용자 관리</Link></li>
                         <li><Link to="/categories">카테고리 관리</Link></li>
                         <li><Link to="/posts">게시물 관리</Link></li>
@@ -22,6 +25,9 @@ function App() {
                 </nav>
 
                 <Routes>
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/categories" element={<Categories />} />
                     <Route path="/posts" element={<Posts />} />
