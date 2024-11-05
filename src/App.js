@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Breadcrumbs, Button } from "@mui/material";
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -14,18 +15,11 @@ function App() {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li><Link to="/signup">회원가입</Link></li>
-                        <li><Link to="/login">로그인</Link></li>
-                        <li><Link to="/profile">프로필</Link></li>
-                        <li><Link to="/users">사용자 관리</Link></li>
-                        <li><Link to="/categories">카테고리 관리</Link></li>
-                        <li><Link to="/posts">게시물 관리</Link></li>
-                        <li><Link to="/comments">댓글 관리</Link></li>
-                        <li><Link to="/tags">태그 관리</Link></li>
-                    </ul>
-                </nav>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Button variant="outlined" href="/signup">회원가입</Button>
+                    <Button variant="outlined" href="/login">로그인</Button>
+                    <Button variant="outlined" href="/profile">프로필</Button>
+                </Breadcrumbs>
 
                 <Routes>
                     <Route path="/signup" element={<Signup />} />
