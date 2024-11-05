@@ -13,13 +13,13 @@ function Login() {
         e.preventDefault();
         try {
             const response = await api.post('/token/', {
-                username: loginId,
+                login_id: loginId,
                 password,
             });
-            const { access, refresh } = response.data;
-            setAuthToken(access);
-            localStorage.setItem('access_token', access);
-            localStorage.setItem('refresh_token', refresh);
+            const token = response.data['token'];
+            setAuthToken(token.access_token);
+            localStorage.setItem('access_token', token.access_token);
+            localStorage.setItem('refresh_token', token.refresh_token);
             navigate('/profile');
         } catch (error) {
             console.error("로그인 오류:", error);
